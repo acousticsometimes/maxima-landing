@@ -1,0 +1,182 @@
+/*
+  MAXIMA PROSPERA — SHARED DESIGN SYSTEM
+  ========================================
+  Import this or inline the :root block into every component's <style>.
+  All spacing, type, color, and radius values reference these tokens.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
+/* ── COLOR TOKENS ── */
+:root {
+  --blue:        #0775b9;
+  --blue-dark:   #0563a0;
+  --blue-dim:    rgba(7,117,185,0.12);
+  --navy:        #022f54;
+  --navy-light:  #03416e;
+  --bg:          #ffffff;
+  --surface:     #f4f6f9;
+  --surface-2:   #edf0f4;
+  --border:      #e2e6ec;
+  --text:        #0d1e30;
+  --text-2:      #3d5168;
+  --muted:       #6b7f95;
+
+  /* ── TYPE SCALE ── */
+  --text-xs:    12px;
+  --text-sm:    14px;
+  --text-base:  16px;
+  --text-md:    18px;
+  --text-lg:    20px;
+  --text-xl:    24px;
+  --text-2xl:   28px;
+  --text-3xl:   clamp(32px, 3.5vw, 40px);
+  --text-4xl:   clamp(40px, 5vw, 56px);
+  --text-hero:  clamp(52px, 7vw, 80px);
+
+  /* ── SPACING ── */
+  --gap-xs:     8px;
+  --gap-sm:     16px;
+  --gap-md:     24px;
+  --gap-lg:     40px;
+  --gap-xl:     64px;
+  --gap-2xl:    96px;
+
+  /* ── RADIUS ── */
+  --r-sm:       8px;
+  --r-md:       14px;
+  --r-lg:       20px;
+  --r-xl:       28px;
+  --r-2xl:      36px;
+
+  /* ── SHADOWS ── */
+  --shadow-sm:  0 2px 8px rgba(2,47,84,0.06);
+  --shadow-md:  0 8px 28px rgba(2,47,84,0.10);
+  --shadow-lg:  0 20px 56px rgba(2,47,84,0.14);
+  --shadow-xl:  0 32px 80px rgba(2,47,84,0.18);
+}
+
+/* Dark mode overrides */
+.dm {
+  --bg:        #0c1420;
+  --surface:   #131e2d;
+  --surface-2: #1a2535;
+  --border:    rgba(255,255,255,0.09);
+  --text:      #e8f0f8;
+  --text-2:    #a8bdd4;
+  --muted:     #6b8099;
+  --blue-dim:  rgba(7,117,185,0.18);
+}
+
+/* ── BASE RESETS ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+/* ── TYPOGRAPHY UTILITIES ── */
+.eyebrow {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+.heading-hero {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: var(--text-hero);
+  font-weight: 800;
+  letter-spacing: -2.5px;
+  line-height: 1.04;
+  color: var(--text);
+}
+.heading-section {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  color: var(--text);
+}
+.heading-card {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+}
+.body-lead {
+  font-size: var(--text-md);
+  font-weight: 400;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+.body-base {
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.body-sm {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── SECTION LAYOUT ── */
+.section-wrap {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.section-pad { padding: var(--gap-2xl) 0; }
+.section-pad-md { padding: var(--gap-xl) 0; }
+
+@media (max-width: 768px) {
+  .section-wrap { padding: 0 20px; }
+  .section-pad { padding: var(--gap-xl) 0; }
+  .section-pad-md { padding: var(--gap-lg) 0; }
+}
+
+/* ── CARD BASE ── */
+.card-base {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-base:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── BUTTON BASE ── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 28px; border-radius: 40px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: var(--text-sm); font-weight: 700;
+  color: #fff; background: var(--blue); border: none;
+  cursor: pointer; transition: background 0.18s, transform 0.15s;
+  white-space: nowrap;
+}
+.btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 28px; border-radius: 40px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: var(--text-sm); font-weight: 600;
+  color: var(--text); background: none;
+  border: 1.5px solid var(--border);
+  cursor: pointer; transition: border-color 0.18s, background 0.18s;
+  white-space: nowrap;
+}
+.btn-secondary:hover { border-color: var(--blue); background: var(--blue-dim); color: var(--blue); }

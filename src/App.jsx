@@ -11,6 +11,7 @@ import FAQ from './FAQ';
 import SEO from './SEO';
 import useLandingContent from './hooks/useLandingContent';
 import { useGoogleTranslate } from './hooks/useGoogleTranslate';
+import maximaLogo from './assets/maximalogo.png';
 
 /* ─── Scroll Reveal ── */
 const Reveal = ({ children, delay = 0, from = 'bottom', noOpacity = false, className = '' }) => {
@@ -513,7 +514,7 @@ export default function App() {
       <nav className="nav">
         <div className="nav-inner">
           <div className="nav-logo" onClick={() => navigateTo('home')}>
-            <img src="/images/logo/maximalogo.png" alt="Maxima Prospera Asia" style={{ height: '20px' }} />
+            <img src={maximaLogo} alt="Maxima Prospera Asia" style={{ height: '20px' }} />
           </div>
           <div className="nav-links">
             <button className="nav-link" onClick={() => navigateTo('home')}>Home</button>

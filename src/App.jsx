@@ -513,7 +513,7 @@ export default function App() {
       <nav className="nav">
         <div className="nav-inner">
           <div className="nav-logo" onClick={() => navigateTo('home')}>
-            <span className="nav-logo-word">MAXIMA</span>
+            <img src="/images/logo/maximalogo.png" alt="Maxima Prospera Asia" style={{ height: '20px' }} />
           </div>
           <div className="nav-links">
             <button className="nav-link" onClick={() => navigateTo('home')}>Home</button>
